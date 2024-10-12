@@ -8,3 +8,6 @@ node_modules
 
 # git merge leftovers
 *.orig
+
+#ydb
+.ydb

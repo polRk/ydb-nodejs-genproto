@@ -1,13 +1,15 @@
 {
   "name": "ydb-sdk-proto",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "Node.js YDB SDK compiled protobufs",
   "main": "proto/bundle.js",
   "files": [
     "proto/**"
   ],
   "scripts": {
-    "build": "pbjs -t static-module -r ydb-sdk -w commonjs -p api -p api/protos -p api/protos/annotations api/{*.proto,protos/*.proto} yandex/cloud/iam/v1/iam_token_service.proto > proto/bundle.js && pbts -o proto/bundle.d.ts proto/bundle.js"
+    "start": "node --import=tsx index.ts",
+    "gen": "buf generate --include-imports --include-wkt",
+    "ydb": "docker run -d --rm --name ydb-local -h localhost --platform linux/amd64 -p 2135:2135 -p 2136:2136 -p 8765:8765 -v $(pwd)/.ydb/ydb_certs:/ydb_certs -v $(pwd)/.ydb/ydb_data:/ydb_data -e GRPC_TLS_PORT=2135 -e GRPC_PORT=2136 -e MON_PORT=8765 -e YDB_USE_IN_MEMORY_PDISKS=true cr.yandex/yc/yandex-docker-local-ydb:latest"
   },
   "keywords": [
     "ydb",
@@ -18,9 +20,16 @@
     "type": "git",
     "url": "https://github.com/ydb-platform/ydb-nodejs-genproto.git"
   },
-  "author": "Timur Sufiev",
   "license": "Apache",
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.2.0",
+    "@connectrpc/connect": "^2.0.0-beta.2",
+    "@connectrpc/connect-node": "^2.0.0-beta.2",
+    "@grpc/grpc-js": "^1.12.2"
+  },
   "devDependencies": {
-    "protobufjs": "^6.11.3"
+    "@bufbuild/buf": "^1.45.0",
+    "@bufbuild/protoc-gen-es": "^2.2.0",
+    "tsx": "^4.19.1"
   }
 }

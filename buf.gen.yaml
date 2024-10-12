@@ -1,0 +1,18 @@
+# Learn more: https://buf.build/docs/configuration/v2/buf-gen-yaml
+version: v2
+# 'clean', when set to true, deletes the directories, zip files, and/or jar files specified in the `out` field for
+# all plugins before running code generation.
+clean: true
+# 'inputs' is a list of inputs that will be run for buf generate. It's a
+# required key for v2 buf.gen.yaml and allows you to specify options based on the type
+# of input (https://buf.build//docs/reference/inputs#source) being configured.
+inputs:
+  # Git repository
+  - git_repo: https://github.com/ydb-platform/ydb-api-protos.git
+    branch: master
+plugins:
+  # This will invoke protoc-gen-es
+  - local: protoc-gen-es
+    out: proto
+    opt:
+      - target=ts
