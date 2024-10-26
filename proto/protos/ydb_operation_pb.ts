@@ -4,8 +4,8 @@
 
 import type { GenEnum, GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
 import { enumDesc, fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv1";
-import type { Any, Duration } from "@bufbuild/protobuf/wkt";
-import { file_google_protobuf_any, file_google_protobuf_duration } from "@bufbuild/protobuf/wkt";
+import type { Any, Duration, Timestamp } from "@bufbuild/protobuf/wkt";
+import { file_google_protobuf_any, file_google_protobuf_duration, file_google_protobuf_timestamp } from "@bufbuild/protobuf/wkt";
 import { file_protos_annotations_validation } from "./annotations/validation_pb";
 import type { CostInfo, FeatureFlag_Status } from "./ydb_common_pb";
 import { file_protos_ydb_common } from "./ydb_common_pb";
@@ -19,7 +19,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file protos/ydb_operation.proto.
  */
 export const file_protos_ydb_operation: GenFile = /*@__PURE__*/
-  fileDesc("Chpwcm90b3MveWRiX29wZXJhdGlvbi5wcm90bxIOWWRiLk9wZXJhdGlvbnMitgMKD09wZXJhdGlvblBhcmFtcxJFCg5vcGVyYXRpb25fbW9kZRgBIAEoDjItLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvblBhcmFtcy5PcGVyYXRpb25Nb2RlEjQKEW9wZXJhdGlvbl90aW1lb3V0GAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uEi8KDGNhbmNlbF9hZnRlchgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhJNCgZsYWJlbHMYBCADKAsyKy5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb25QYXJhbXMuTGFiZWxzRW50cnlCEKLmKgMYgAGq5ioFCgMYgAESMQoQcmVwb3J0X2Nvc3RfaW5mbxgFIAEoDjIXLllkYi5GZWF0dXJlRmxhZy5TdGF0dXMaLQoLTGFiZWxzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJECg1PcGVyYXRpb25Nb2RlEh4KGk9QRVJBVElPTl9NT0RFX1VOU1BFQ0lGSUVEEAASCAoEU1lOQxABEgkKBUFTWU5DEAIiJwoTR2V0T3BlcmF0aW9uUmVxdWVzdBIQCgJpZBgBIAEoCUIEkOYqASJEChRHZXRPcGVyYXRpb25SZXNwb25zZRIsCglvcGVyYXRpb24YASABKAsyGS5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb24iKgoWQ2FuY2VsT3BlcmF0aW9uUmVxdWVzdBIQCgJpZBgBIAEoCUIEkOYqASJtChdDYW5jZWxPcGVyYXRpb25SZXNwb25zZRIpCgZzdGF0dXMYASABKA4yGS5ZZGIuU3RhdHVzSWRzLlN0YXR1c0NvZGUSJwoGaXNzdWVzGAIgAygLMhcuWWRiLklzc3VlLklzc3VlTWVzc2FnZSIqChZGb3JnZXRPcGVyYXRpb25SZXF1ZXN0EhAKAmlkGAEgASgJQgSQ5ioBIm0KF0ZvcmdldE9wZXJhdGlvblJlc3BvbnNlEikKBnN0YXR1cxgBIAEoDjIZLllkYi5TdGF0dXNJZHMuU3RhdHVzQ29kZRInCgZpc3N1ZXMYAiADKAsyFy5ZZGIuSXNzdWUuSXNzdWVNZXNzYWdlIlIKFUxpc3RPcGVyYXRpb25zUmVxdWVzdBISCgRraW5kGAEgASgJQgSQ5ioBEhEKCXBhZ2Vfc2l6ZRgCIAEoBBISCgpwYWdlX3Rva2VuGAMgASgJIrQBChZMaXN0T3BlcmF0aW9uc1Jlc3BvbnNlEikKBnN0YXR1cxgBIAEoDjIZLllkYi5TdGF0dXNJZHMuU3RhdHVzQ29kZRInCgZpc3N1ZXMYAiADKAsyFy5ZZGIuSXNzdWUuSXNzdWVNZXNzYWdlEi0KCm9wZXJhdGlvbnMYAyADKAsyGS5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb24SFwoPbmV4dF9wYWdlX3Rva2VuGAQgASgJIuoBCglPcGVyYXRpb24SCgoCaWQYASABKAkSDQoFcmVhZHkYAiABKAgSKQoGc3RhdHVzGAMgASgOMhkuWWRiLlN0YXR1c0lkcy5TdGF0dXNDb2RlEicKBmlzc3VlcxgEIAMoCzIXLllkYi5Jc3N1ZS5Jc3N1ZU1lc3NhZ2USJAoGcmVzdWx0GAUgASgLMhQuZ29vZ2xlLnByb3RvYnVmLkFueRImCghtZXRhZGF0YRgGIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSIAoJY29zdF9pbmZvGAcgASgLMg0uWWRiLkNvc3RJbmZvQmMKDnRlY2gueWRiLnByb3RvQg9PcGVyYXRpb25Qcm90b3NaPWdpdGh1Yi5jb20veWRiLXBsYXRmb3JtL3lkYi1nby1nZW5wcm90by9wcm90b3MvWWRiX09wZXJhdGlvbnP4AQFiBnByb3RvMw", [file_google_protobuf_any, file_google_protobuf_duration, file_protos_annotations_validation, file_protos_ydb_common, file_protos_ydb_issue_message, file_protos_ydb_status_codes]);
+  fileDesc("Chpwcm90b3MveWRiX29wZXJhdGlvbi5wcm90bxIOWWRiLk9wZXJhdGlvbnMi5wMKD09wZXJhdGlvblBhcmFtcxJFCg5vcGVyYXRpb25fbW9kZRgBIAEoDjItLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvblBhcmFtcy5PcGVyYXRpb25Nb2RlEjQKEW9wZXJhdGlvbl90aW1lb3V0GAIgASgLMhkuZ29vZ2xlLnByb3RvYnVmLkR1cmF0aW9uEi8KDGNhbmNlbF9hZnRlchgDIAEoCzIZLmdvb2dsZS5wcm90b2J1Zi5EdXJhdGlvbhIvCgxmb3JnZXRfYWZ0ZXIYBiABKAsyGS5nb29nbGUucHJvdG9idWYuRHVyYXRpb24STQoGbGFiZWxzGAQgAygLMisuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uUGFyYW1zLkxhYmVsc0VudHJ5QhCi5ioDGIABquYqBQoDGIABEjEKEHJlcG9ydF9jb3N0X2luZm8YBSABKA4yFy5ZZGIuRmVhdHVyZUZsYWcuU3RhdHVzGi0KC0xhYmVsc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoCToCOAEiRAoNT3BlcmF0aW9uTW9kZRIeChpPUEVSQVRJT05fTU9ERV9VTlNQRUNJRklFRBAAEggKBFNZTkMQARIJCgVBU1lOQxACIicKE0dldE9wZXJhdGlvblJlcXVlc3QSEAoCaWQYASABKAlCBJDmKgEiRAoUR2V0T3BlcmF0aW9uUmVzcG9uc2USLAoJb3BlcmF0aW9uGAEgASgLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uIioKFkNhbmNlbE9wZXJhdGlvblJlcXVlc3QSEAoCaWQYASABKAlCBJDmKgEibQoXQ2FuY2VsT3BlcmF0aW9uUmVzcG9uc2USKQoGc3RhdHVzGAEgASgOMhkuWWRiLlN0YXR1c0lkcy5TdGF0dXNDb2RlEicKBmlzc3VlcxgCIAMoCzIXLllkYi5Jc3N1ZS5Jc3N1ZU1lc3NhZ2UiKgoWRm9yZ2V0T3BlcmF0aW9uUmVxdWVzdBIQCgJpZBgBIAEoCUIEkOYqASJtChdGb3JnZXRPcGVyYXRpb25SZXNwb25zZRIpCgZzdGF0dXMYASABKA4yGS5ZZGIuU3RhdHVzSWRzLlN0YXR1c0NvZGUSJwoGaXNzdWVzGAIgAygLMhcuWWRiLklzc3VlLklzc3VlTWVzc2FnZSJSChVMaXN0T3BlcmF0aW9uc1JlcXVlc3QSEgoEa2luZBgBIAEoCUIEkOYqARIRCglwYWdlX3NpemUYAiABKAQSEgoKcGFnZV90b2tlbhgDIAEoCSK0AQoWTGlzdE9wZXJhdGlvbnNSZXNwb25zZRIpCgZzdGF0dXMYASABKA4yGS5ZZGIuU3RhdHVzSWRzLlN0YXR1c0NvZGUSJwoGaXNzdWVzGAIgAygLMhcuWWRiLklzc3VlLklzc3VlTWVzc2FnZRItCgpvcGVyYXRpb25zGAMgAygLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uEhcKD25leHRfcGFnZV90b2tlbhgEIAEoCSLdAgoJT3BlcmF0aW9uEgoKAmlkGAEgASgJEg0KBXJlYWR5GAIgASgIEikKBnN0YXR1cxgDIAEoDjIZLllkYi5TdGF0dXNJZHMuU3RhdHVzQ29kZRInCgZpc3N1ZXMYBCADKAsyFy5ZZGIuSXNzdWUuSXNzdWVNZXNzYWdlEiQKBnJlc3VsdBgFIAEoCzIULmdvb2dsZS5wcm90b2J1Zi5BbnkSJgoIbWV0YWRhdGEYBiABKAsyFC5nb29nbGUucHJvdG9idWYuQW55EiAKCWNvc3RfaW5mbxgHIAEoCzINLllkYi5Db3N0SW5mbxIvCgtjcmVhdGVfdGltZRgIIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXASLAoIZW5kX3RpbWUYCSABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wEhIKCmNyZWF0ZWRfYnkYCiABKAlCYwoOdGVjaC55ZGIucHJvdG9CD09wZXJhdGlvblByb3Rvc1o9Z2l0aHViLmNvbS95ZGItcGxhdGZvcm0veWRiLWdvLWdlbnByb3RvL3Byb3Rvcy9ZZGJfT3BlcmF0aW9uc/gBAWIGcHJvdG8z", [file_google_protobuf_any, file_google_protobuf_duration, file_google_protobuf_timestamp, file_protos_annotations_validation, file_protos_ydb_common, file_protos_ydb_issue_message, file_protos_ydb_status_codes]);
 
 /**
  * @generated from message Ydb.Operations.OperationParams
@@ -52,6 +52,19 @@ export type OperationParams = Message<"Ydb.Operations.OperationParams"> & {
    * @generated from field: google.protobuf.Duration cancel_after = 3;
    */
   cancelAfter?: Duration;
+
+  /**
+   * Server will forget long-running operation (equivalent to ForgetOperation call) after the specified duration
+   * starting from the time the operation has finished. This will remove information associated with operation,
+   * including operation metadata as well as any internal resources associated with it.
+   * This setting only has effect on operations running in ASYNC mode, which create persistent operation object.
+   * For other types of operations it is ignored.
+   * If the parameter is absent, its default value for a particular type of operation will be used.
+   * See documentation for particular types of operations.
+   *
+   * @generated from field: google.protobuf.Duration forget_after = 6;
+   */
+  forgetAfter?: Duration;
 
   /**
    * User-defined labels of operation.
@@ -289,7 +302,7 @@ export type Operation = Message<"Ydb.Operations.Operation"> & {
   id: string;
 
   /**
-   * true - this operation has beed finished (doesn't matter successful or not),
+   * true - this operation has been completed (doesn't matter successful or not),
    * so Status field has status code, and Result field can contains result data.
    * false - this operation still running. You can repeat request using operation Id.
    *
@@ -327,6 +340,27 @@ export type Operation = Message<"Ydb.Operations.Operation"> & {
    * @generated from field: Ydb.CostInfo cost_info = 7;
    */
   costInfo?: CostInfo;
+
+  /**
+   * The time at which this operation was created (if supported).
+   *
+   * @generated from field: google.protobuf.Timestamp create_time = 8;
+   */
+  createTime?: Timestamp;
+
+  /**
+   * The time at which this operation was completed, doesn't matter successful or not (if supported).
+   *
+   * @generated from field: google.protobuf.Timestamp end_time = 9;
+   */
+  endTime?: Timestamp;
+
+  /**
+   * User SID (Security ID) of the user who created this operation (if supported).
+   *
+   * @generated from field: string created_by = 10;
+   */
+  createdBy: string;
 };
 
 /**

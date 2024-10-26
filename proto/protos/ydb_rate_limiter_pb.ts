@@ -4,15 +4,170 @@
 
 import type { GenFile, GenMessage } from "@bufbuild/protobuf/codegenv1";
 import { fileDesc, messageDesc } from "@bufbuild/protobuf/codegenv1";
+import { file_google_protobuf_struct } from "@bufbuild/protobuf/wkt";
+import { file_protos_annotations_validation } from "./annotations/validation_pb";
 import type { Operation, OperationParams } from "./ydb_operation_pb";
 import { file_protos_ydb_operation } from "./ydb_operation_pb";
-import type { Message } from "@bufbuild/protobuf";
+import { file_protos_ydb_value } from "./ydb_value_pb";
+import type { JsonObject, Message } from "@bufbuild/protobuf";
 
 /**
  * Describes the file protos/ydb_rate_limiter.proto.
  */
 export const file_protos_ydb_rate_limiter: GenFile = /*@__PURE__*/
-  fileDesc("Ch1wcm90b3MveWRiX3JhdGVfbGltaXRlci5wcm90bxIPWWRiLlJhdGVMaW1pdGVyIpUBChdIaWVyYXJjaGljYWxEcnJTZXR0aW5ncxIcChRtYXhfdW5pdHNfcGVyX3NlY29uZBgBIAEoARIiChptYXhfYnVyc3Rfc2l6ZV9jb2VmZmljaWVudBgCIAEoARIcChRwcmVmZXRjaF9jb2VmZmljaWVudBgDIAEoARIaChJwcmVmZXRjaF93YXRlcm1hcmsYBCABKAEibwoIUmVzb3VyY2USFQoNcmVzb3VyY2VfcGF0aBgBIAEoCRJEChBoaWVyYXJjaGljYWxfZHJyGAIgASgLMiguWWRiLlJhdGVMaW1pdGVyLkhpZXJhcmNoaWNhbERyclNldHRpbmdzSABCBgoEdHlwZSKfAQoVQ3JlYXRlUmVzb3VyY2VSZXF1ZXN0EjkKEG9wZXJhdGlvbl9wYXJhbXMYASABKAsyHy5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb25QYXJhbXMSHgoWY29vcmRpbmF0aW9uX25vZGVfcGF0aBgCIAEoCRIrCghyZXNvdXJjZRgDIAEoCzIZLllkYi5SYXRlTGltaXRlci5SZXNvdXJjZSJGChZDcmVhdGVSZXNvdXJjZVJlc3BvbnNlEiwKCW9wZXJhdGlvbhgBIAEoCzIZLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvbiIWChRDcmVhdGVSZXNvdXJjZVJlc3VsdCKeAQoUQWx0ZXJSZXNvdXJjZVJlcXVlc3QSOQoQb3BlcmF0aW9uX3BhcmFtcxgBIAEoCzIfLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvblBhcmFtcxIeChZjb29yZGluYXRpb25fbm9kZV9wYXRoGAIgASgJEisKCHJlc291cmNlGAMgASgLMhkuWWRiLlJhdGVMaW1pdGVyLlJlc291cmNlIkUKFUFsdGVyUmVzb3VyY2VSZXNwb25zZRIsCglvcGVyYXRpb24YASABKAsyGS5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb24iFQoTQWx0ZXJSZXNvdXJjZVJlc3VsdCKHAQoTRHJvcFJlc291cmNlUmVxdWVzdBI5ChBvcGVyYXRpb25fcGFyYW1zGAEgASgLMh8uWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uUGFyYW1zEh4KFmNvb3JkaW5hdGlvbl9ub2RlX3BhdGgYAiABKAkSFQoNcmVzb3VyY2VfcGF0aBgDIAEoCSJEChREcm9wUmVzb3VyY2VSZXNwb25zZRIsCglvcGVyYXRpb24YASABKAsyGS5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb24iFAoSRHJvcFJlc291cmNlUmVzdWx0IpsBChRMaXN0UmVzb3VyY2VzUmVxdWVzdBI5ChBvcGVyYXRpb25fcGFyYW1zGAEgASgLMh8uWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uUGFyYW1zEh4KFmNvb3JkaW5hdGlvbl9ub2RlX3BhdGgYAiABKAkSFQoNcmVzb3VyY2VfcGF0aBgDIAEoCRIRCglyZWN1cnNpdmUYBCABKAgiRQoVTGlzdFJlc291cmNlc1Jlc3BvbnNlEiwKCW9wZXJhdGlvbhgBIAEoCzIZLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvbiItChNMaXN0UmVzb3VyY2VzUmVzdWx0EhYKDnJlc291cmNlX3BhdGhzGAEgAygJIosBChdEZXNjcmliZVJlc291cmNlUmVxdWVzdBI5ChBvcGVyYXRpb25fcGFyYW1zGAEgASgLMh8uWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uUGFyYW1zEh4KFmNvb3JkaW5hdGlvbl9ub2RlX3BhdGgYAiABKAkSFQoNcmVzb3VyY2VfcGF0aBgDIAEoCSJIChhEZXNjcmliZVJlc291cmNlUmVzcG9uc2USLAoJb3BlcmF0aW9uGAEgASgLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uIkUKFkRlc2NyaWJlUmVzb3VyY2VSZXN1bHQSKwoIcmVzb3VyY2UYASABKAsyGS5ZZGIuUmF0ZUxpbWl0ZXIuUmVzb3VyY2UitwEKFkFjcXVpcmVSZXNvdXJjZVJlcXVlc3QSOQoQb3BlcmF0aW9uX3BhcmFtcxgBIAEoCzIfLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvblBhcmFtcxIeChZjb29yZGluYXRpb25fbm9kZV9wYXRoGAIgASgJEhUKDXJlc291cmNlX3BhdGgYAyABKAkSEgoIcmVxdWlyZWQYBCABKARIABIOCgR1c2VkGAUgASgESABCBwoFdW5pdHMiRwoXQWNxdWlyZVJlc291cmNlUmVzcG9uc2USLAoJb3BlcmF0aW9uGAEgASgLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uIhcKFUFjcXVpcmVSZXNvdXJjZVJlc3VsdEJ1Cht0ZWNoLnlkYi5wcm90by5yYXRlX2xpbWl0ZXJCEVJhdGVMaW1pdGVyUHJvdG9zUAFaPmdpdGh1Yi5jb20veWRiLXBsYXRmb3JtL3lkYi1nby1nZW5wcm90by9wcm90b3MvWWRiX1JhdGVMaW1pdGVy+AEBYgZwcm90bzM", [file_protos_ydb_operation]);
+  fileDesc("Ch1wcm90b3MveWRiX3JhdGVfbGltaXRlci5wcm90bxIPWWRiLlJhdGVMaW1pdGVyIvADCg5NZXRlcmluZ0NvbmZpZxIPCgdlbmFibGVkGAEgASgIEhgKEHJlcG9ydF9wZXJpb2RfbXMYAiABKAQSFwoPbWV0ZXJfcGVyaW9kX21zGAMgASgEEhoKEmNvbGxlY3RfcGVyaW9kX3NlYxgEIAEoBBIkChxwcm92aXNpb25lZF91bml0c19wZXJfc2Vjb25kGAUgASgBEh8KF3Byb3Zpc2lvbmVkX2NvZWZmaWNpZW50GAYgASgBEh0KFW92ZXJzaG9vdF9jb2VmZmljaWVudBgHIAEoARI7Cgtwcm92aXNpb25lZBgIIAEoCzImLllkYi5SYXRlTGltaXRlci5NZXRlcmluZ0NvbmZpZy5NZXRyaWMSOQoJb25fZGVtYW5kGAkgASgLMiYuWWRiLlJhdGVMaW1pdGVyLk1ldGVyaW5nQ29uZmlnLk1ldHJpYxI5CglvdmVyc2hvb3QYCiABKAsyJi5ZZGIuUmF0ZUxpbWl0ZXIuTWV0ZXJpbmdDb25maWcuTWV0cmljGmUKBk1ldHJpYxIPCgdlbmFibGVkGAEgASgIEhoKEmJpbGxpbmdfcGVyaW9kX3NlYxgCIAEoBBIuCg1tZXRyaWNfZmllbGRzGAogASgLMhcuZ29vZ2xlLnByb3RvYnVmLlN0cnVjdCJbChhSZXBsaWNhdGVkQnVja2V0U2V0dGluZ3MSKAoScmVwb3J0X2ludGVydmFsX21zGAEgASgEQgey5ioDPiAwSACIAQFCFQoTX3JlcG9ydF9pbnRlcnZhbF9tcyK3AgoXSGllcmFyY2hpY2FsRHJyU2V0dGluZ3MSHAoUbWF4X3VuaXRzX3Blcl9zZWNvbmQYASABKAESIgoabWF4X2J1cnN0X3NpemVfY29lZmZpY2llbnQYAiABKAESHAoUcHJlZmV0Y2hfY29lZmZpY2llbnQYAyABKAESGgoScHJlZmV0Y2hfd2F0ZXJtYXJrGAQgASgBEiwKFmltbWVkaWF0ZWx5X2ZpbGxfdXBfdG8YBSABKAFCB7LmKgM8IDBIAYgBARJGChFyZXBsaWNhdGVkX2J1Y2tldBgGIAEoCzIpLllkYi5SYXRlTGltaXRlci5SZXBsaWNhdGVkQnVja2V0U2V0dGluZ3NIAEIPCg1sZWFmX2JlaGF2aW9yQhkKF19pbW1lZGlhdGVseV9maWxsX3VwX3RvIqkBCghSZXNvdXJjZRIVCg1yZXNvdXJjZV9wYXRoGAEgASgJEkQKEGhpZXJhcmNoaWNhbF9kcnIYAiABKAsyKC5ZZGIuUmF0ZUxpbWl0ZXIuSGllcmFyY2hpY2FsRHJyU2V0dGluZ3NIABI4Cg9tZXRlcmluZ19jb25maWcYAyABKAsyHy5ZZGIuUmF0ZUxpbWl0ZXIuTWV0ZXJpbmdDb25maWdCBgoEdHlwZSKfAQoVQ3JlYXRlUmVzb3VyY2VSZXF1ZXN0EjkKEG9wZXJhdGlvbl9wYXJhbXMYASABKAsyHy5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb25QYXJhbXMSHgoWY29vcmRpbmF0aW9uX25vZGVfcGF0aBgCIAEoCRIrCghyZXNvdXJjZRgDIAEoCzIZLllkYi5SYXRlTGltaXRlci5SZXNvdXJjZSJGChZDcmVhdGVSZXNvdXJjZVJlc3BvbnNlEiwKCW9wZXJhdGlvbhgBIAEoCzIZLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvbiIWChRDcmVhdGVSZXNvdXJjZVJlc3VsdCKeAQoUQWx0ZXJSZXNvdXJjZVJlcXVlc3QSOQoQb3BlcmF0aW9uX3BhcmFtcxgBIAEoCzIfLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvblBhcmFtcxIeChZjb29yZGluYXRpb25fbm9kZV9wYXRoGAIgASgJEisKCHJlc291cmNlGAMgASgLMhkuWWRiLlJhdGVMaW1pdGVyLlJlc291cmNlIkUKFUFsdGVyUmVzb3VyY2VSZXNwb25zZRIsCglvcGVyYXRpb24YASABKAsyGS5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb24iFQoTQWx0ZXJSZXNvdXJjZVJlc3VsdCKHAQoTRHJvcFJlc291cmNlUmVxdWVzdBI5ChBvcGVyYXRpb25fcGFyYW1zGAEgASgLMh8uWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uUGFyYW1zEh4KFmNvb3JkaW5hdGlvbl9ub2RlX3BhdGgYAiABKAkSFQoNcmVzb3VyY2VfcGF0aBgDIAEoCSJEChREcm9wUmVzb3VyY2VSZXNwb25zZRIsCglvcGVyYXRpb24YASABKAsyGS5ZZGIuT3BlcmF0aW9ucy5PcGVyYXRpb24iFAoSRHJvcFJlc291cmNlUmVzdWx0IpsBChRMaXN0UmVzb3VyY2VzUmVxdWVzdBI5ChBvcGVyYXRpb25fcGFyYW1zGAEgASgLMh8uWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uUGFyYW1zEh4KFmNvb3JkaW5hdGlvbl9ub2RlX3BhdGgYAiABKAkSFQoNcmVzb3VyY2VfcGF0aBgDIAEoCRIRCglyZWN1cnNpdmUYBCABKAgiRQoVTGlzdFJlc291cmNlc1Jlc3BvbnNlEiwKCW9wZXJhdGlvbhgBIAEoCzIZLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvbiItChNMaXN0UmVzb3VyY2VzUmVzdWx0EhYKDnJlc291cmNlX3BhdGhzGAEgAygJIosBChdEZXNjcmliZVJlc291cmNlUmVxdWVzdBI5ChBvcGVyYXRpb25fcGFyYW1zGAEgASgLMh8uWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uUGFyYW1zEh4KFmNvb3JkaW5hdGlvbl9ub2RlX3BhdGgYAiABKAkSFQoNcmVzb3VyY2VfcGF0aBgDIAEoCSJIChhEZXNjcmliZVJlc291cmNlUmVzcG9uc2USLAoJb3BlcmF0aW9uGAEgASgLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uIkUKFkRlc2NyaWJlUmVzb3VyY2VSZXN1bHQSKwoIcmVzb3VyY2UYASABKAsyGS5ZZGIuUmF0ZUxpbWl0ZXIuUmVzb3VyY2UitwEKFkFjcXVpcmVSZXNvdXJjZVJlcXVlc3QSOQoQb3BlcmF0aW9uX3BhcmFtcxgBIAEoCzIfLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvblBhcmFtcxIeChZjb29yZGluYXRpb25fbm9kZV9wYXRoGAIgASgJEhUKDXJlc291cmNlX3BhdGgYAyABKAkSEgoIcmVxdWlyZWQYBCABKARIABIOCgR1c2VkGAUgASgESABCBwoFdW5pdHMiRwoXQWNxdWlyZVJlc291cmNlUmVzcG9uc2USLAoJb3BlcmF0aW9uGAEgASgLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uIhcKFUFjcXVpcmVSZXNvdXJjZVJlc3VsdEJ1Cht0ZWNoLnlkYi5wcm90by5yYXRlX2xpbWl0ZXJCEVJhdGVMaW1pdGVyUHJvdG9zUAFaPmdpdGh1Yi5jb20veWRiLXBsYXRmb3JtL3lkYi1nby1nZW5wcm90by9wcm90b3MvWWRiX1JhdGVMaW1pdGVy+AEBYgZwcm90bzM", [file_google_protobuf_struct, file_protos_annotations_validation, file_protos_ydb_operation, file_protos_ydb_value]);
+
+/**
+ * @generated from message Ydb.RateLimiter.MeteringConfig
+ */
+export type MeteringConfig = Message<"Ydb.RateLimiter.MeteringConfig"> & {
+  /**
+   * Meter consumed resources and send billing metrics.
+   * Default value is false (not inherited).
+   *
+   * @generated from field: bool enabled = 1;
+   */
+  enabled: boolean;
+
+  /**
+   * Period to report consumption history from clients to kesus
+   * Default value is inherited from parent or equals 5000 ms for root.
+   *
+   * @generated from field: uint64 report_period_ms = 2;
+   */
+  reportPeriodMs: bigint;
+
+  /**
+   * Consumption history period that is sent in one message to metering actor.
+   * Default value is inherited from parent or equals 1000 ms for root.
+   *
+   * @generated from field: uint64 meter_period_ms = 3;
+   */
+  meterPeriodMs: bigint;
+
+  /**
+   * Time window to collect data from every client.
+   * Any client metering message that is `collect_period` late is discarded (not metered or billed).
+   * Default value is inherited from parent or equals 30 seconds for root.
+   *
+   * @generated from field: uint64 collect_period_sec = 4;
+   */
+  collectPeriodSec: bigint;
+
+  /**
+   * Provisioned consumption limit in units per second.
+   * Effective value is limited by corresponding `max_units_per_second`.
+   * Default value is 0 (not inherited).
+   *
+   * @generated from field: double provisioned_units_per_second = 5;
+   */
+  provisionedUnitsPerSecond: number;
+
+  /**
+   * Provisioned allowed burst equals `provisioned_coefficient * provisioned_units_per_second` units.
+   * Effective value is limited by corresponding PrefetchCoefficient.
+   * Default value is inherited from parent or equals 60 for root.
+   *
+   * @generated from field: double provisioned_coefficient = 6;
+   */
+  provisionedCoefficient: number;
+
+  /**
+   * On-demand allowed burst equals `overshoot_coefficient * prefetch_coefficient * max_units_per_second` units.
+   * Should be greater or equal to 1.0
+   * Default value is inherited from parent or equals 1.1 for root
+   *
+   * @generated from field: double overshoot_coefficient = 7;
+   */
+  overshootCoefficient: number;
+
+  /**
+   * Consumption within provisioned limit.
+   * Informative metric that should be sent to billing (not billed).
+   *
+   * @generated from field: Ydb.RateLimiter.MeteringConfig.Metric provisioned = 8;
+   */
+  provisioned?: MeteringConfig_Metric;
+
+  /**
+   * Consumption that exceeds provisioned limit is billed as on-demand.
+   *
+   * @generated from field: Ydb.RateLimiter.MeteringConfig.Metric on_demand = 9;
+   */
+  onDemand?: MeteringConfig_Metric;
+
+  /**
+   * Consumption that exceeds even on-demand limit.
+   * Normally it is free and should not be billed.
+   *
+   * @generated from field: Ydb.RateLimiter.MeteringConfig.Metric overshoot = 10;
+   */
+  overshoot?: MeteringConfig_Metric;
+};
+
+/**
+ * Describes the message Ydb.RateLimiter.MeteringConfig.
+ * Use `create(MeteringConfigSchema)` to create a new message.
+ */
+export const MeteringConfigSchema: GenMessage<MeteringConfig> = /*@__PURE__*/
+  messageDesc(file_protos_ydb_rate_limiter, 0);
+
+/**
+ * Billing metric description.
+ *
+ * @generated from message Ydb.RateLimiter.MeteringConfig.Metric
+ */
+export type MeteringConfig_Metric = Message<"Ydb.RateLimiter.MeteringConfig.Metric"> & {
+  /**
+   * Send this metric to billing.
+   * Default value is false (not inherited).
+   *
+   * @generated from field: bool enabled = 1;
+   */
+  enabled: boolean;
+
+  /**
+   * Billing metric period (aligned to hour boundary).
+   * Default value is inherited from parent or equals 60 seconds for root.
+   *
+   * @generated from field: uint64 billing_period_sec = 2;
+   */
+  billingPeriodSec: bigint;
+
+  /**
+   * Billing metric JSON fields (inherited from parent if not set)
+   *
+   * @generated from field: google.protobuf.Struct metric_fields = 10;
+   */
+  metricFields?: JsonObject;
+};
+
+/**
+ * Describes the message Ydb.RateLimiter.MeteringConfig.Metric.
+ * Use `create(MeteringConfig_MetricSchema)` to create a new message.
+ */
+export const MeteringConfig_MetricSchema: GenMessage<MeteringConfig_Metric> = /*@__PURE__*/
+  messageDesc(file_protos_ydb_rate_limiter, 0, 0);
+
+/**
+ * @generated from message Ydb.RateLimiter.ReplicatedBucketSettings
+ */
+export type ReplicatedBucketSettings = Message<"Ydb.RateLimiter.ReplicatedBucketSettings"> & {
+  /**
+   * Interval between syncs from kesus and between consumption reports in Ms
+   * Default value equals 5000 ms and not inherited
+   *
+   * @generated from field: optional uint64 report_interval_ms = 1;
+   */
+  reportIntervalMs?: bigint;
+};
+
+/**
+ * Describes the message Ydb.RateLimiter.ReplicatedBucketSettings.
+ * Use `create(ReplicatedBucketSettingsSchema)` to create a new message.
+ */
+export const ReplicatedBucketSettingsSchema: GenMessage<ReplicatedBucketSettings> = /*@__PURE__*/
+  messageDesc(file_protos_ydb_rate_limiter, 1);
 
 /**
  * Settings for hierarchical deficit round robin (HDRR) algorithm.
@@ -60,6 +215,34 @@ export type HierarchicalDrrSettings = Message<"Ydb.RateLimiter.HierarchicalDrrSe
    * @generated from field: double prefetch_watermark = 4;
    */
   prefetchWatermark: number;
+
+  /**
+   * NOTE: This API is experimental
+   * Prevents bucket from going too deep in negative values. If somebody reports value that will exceed
+   * this limit the final amount in bucket will be equal to this limit
+   * Should be negative value
+   * Unset means no limit
+   *
+   * @generated from field: optional double immediately_fill_up_to = 5;
+   */
+  immediatelyFillUpTo?: number;
+
+  /**
+   * NOTE: This API is experimental
+   * Behavior of leafs in tree
+   * Not inherited
+   *
+   * @generated from oneof Ydb.RateLimiter.HierarchicalDrrSettings.leaf_behavior
+   */
+  leafBehavior: {
+    /**
+     * Make leafs behave as single bucket replicated from kesus
+     *
+     * @generated from field: Ydb.RateLimiter.ReplicatedBucketSettings replicated_bucket = 6;
+     */
+    value: ReplicatedBucketSettings;
+    case: "replicatedBucket";
+  } | { case: undefined; value?: undefined };
 };
 
 /**
@@ -67,7 +250,7 @@ export type HierarchicalDrrSettings = Message<"Ydb.RateLimiter.HierarchicalDrrSe
  * Use `create(HierarchicalDrrSettingsSchema)` to create a new message.
  */
 export const HierarchicalDrrSettingsSchema: GenMessage<HierarchicalDrrSettings> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 0);
+  messageDesc(file_protos_ydb_rate_limiter, 2);
 
 /**
  * Rate limiter resource description.
@@ -97,6 +280,11 @@ export type Resource = Message<"Ydb.RateLimiter.Resource"> & {
     value: HierarchicalDrrSettings;
     case: "hierarchicalDrr";
   } | { case: undefined; value?: undefined };
+
+  /**
+   * @generated from field: Ydb.RateLimiter.MeteringConfig metering_config = 3;
+   */
+  meteringConfig?: MeteringConfig;
 };
 
 /**
@@ -104,7 +292,7 @@ export type Resource = Message<"Ydb.RateLimiter.Resource"> & {
  * Use `create(ResourceSchema)` to create a new message.
  */
 export const ResourceSchema: GenMessage<Resource> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 1);
+  messageDesc(file_protos_ydb_rate_limiter, 3);
 
 /**
  * @generated from message Ydb.RateLimiter.CreateResourceRequest
@@ -135,7 +323,7 @@ export type CreateResourceRequest = Message<"Ydb.RateLimiter.CreateResourceReque
  * Use `create(CreateResourceRequestSchema)` to create a new message.
  */
 export const CreateResourceRequestSchema: GenMessage<CreateResourceRequest> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 2);
+  messageDesc(file_protos_ydb_rate_limiter, 4);
 
 /**
  * @generated from message Ydb.RateLimiter.CreateResourceResponse
@@ -154,7 +342,7 @@ export type CreateResourceResponse = Message<"Ydb.RateLimiter.CreateResourceResp
  * Use `create(CreateResourceResponseSchema)` to create a new message.
  */
 export const CreateResourceResponseSchema: GenMessage<CreateResourceResponse> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 3);
+  messageDesc(file_protos_ydb_rate_limiter, 5);
 
 /**
  * @generated from message Ydb.RateLimiter.CreateResourceResult
@@ -167,7 +355,7 @@ export type CreateResourceResult = Message<"Ydb.RateLimiter.CreateResourceResult
  * Use `create(CreateResourceResultSchema)` to create a new message.
  */
 export const CreateResourceResultSchema: GenMessage<CreateResourceResult> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 4);
+  messageDesc(file_protos_ydb_rate_limiter, 6);
 
 /**
  * @generated from message Ydb.RateLimiter.AlterResourceRequest
@@ -198,7 +386,7 @@ export type AlterResourceRequest = Message<"Ydb.RateLimiter.AlterResourceRequest
  * Use `create(AlterResourceRequestSchema)` to create a new message.
  */
 export const AlterResourceRequestSchema: GenMessage<AlterResourceRequest> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 5);
+  messageDesc(file_protos_ydb_rate_limiter, 7);
 
 /**
  * @generated from message Ydb.RateLimiter.AlterResourceResponse
@@ -217,7 +405,7 @@ export type AlterResourceResponse = Message<"Ydb.RateLimiter.AlterResourceRespon
  * Use `create(AlterResourceResponseSchema)` to create a new message.
  */
 export const AlterResourceResponseSchema: GenMessage<AlterResourceResponse> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 6);
+  messageDesc(file_protos_ydb_rate_limiter, 8);
 
 /**
  * @generated from message Ydb.RateLimiter.AlterResourceResult
@@ -230,7 +418,7 @@ export type AlterResourceResult = Message<"Ydb.RateLimiter.AlterResourceResult">
  * Use `create(AlterResourceResultSchema)` to create a new message.
  */
 export const AlterResourceResultSchema: GenMessage<AlterResourceResult> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 7);
+  messageDesc(file_protos_ydb_rate_limiter, 9);
 
 /**
  * @generated from message Ydb.RateLimiter.DropResourceRequest
@@ -261,7 +449,7 @@ export type DropResourceRequest = Message<"Ydb.RateLimiter.DropResourceRequest">
  * Use `create(DropResourceRequestSchema)` to create a new message.
  */
 export const DropResourceRequestSchema: GenMessage<DropResourceRequest> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 8);
+  messageDesc(file_protos_ydb_rate_limiter, 10);
 
 /**
  * @generated from message Ydb.RateLimiter.DropResourceResponse
@@ -280,7 +468,7 @@ export type DropResourceResponse = Message<"Ydb.RateLimiter.DropResourceResponse
  * Use `create(DropResourceResponseSchema)` to create a new message.
  */
 export const DropResourceResponseSchema: GenMessage<DropResourceResponse> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 9);
+  messageDesc(file_protos_ydb_rate_limiter, 11);
 
 /**
  * @generated from message Ydb.RateLimiter.DropResourceResult
@@ -293,7 +481,7 @@ export type DropResourceResult = Message<"Ydb.RateLimiter.DropResourceResult"> &
  * Use `create(DropResourceResultSchema)` to create a new message.
  */
 export const DropResourceResultSchema: GenMessage<DropResourceResult> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 10);
+  messageDesc(file_protos_ydb_rate_limiter, 12);
 
 /**
  * @generated from message Ydb.RateLimiter.ListResourcesRequest
@@ -333,7 +521,7 @@ export type ListResourcesRequest = Message<"Ydb.RateLimiter.ListResourcesRequest
  * Use `create(ListResourcesRequestSchema)` to create a new message.
  */
 export const ListResourcesRequestSchema: GenMessage<ListResourcesRequest> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 11);
+  messageDesc(file_protos_ydb_rate_limiter, 13);
 
 /**
  * @generated from message Ydb.RateLimiter.ListResourcesResponse
@@ -352,7 +540,7 @@ export type ListResourcesResponse = Message<"Ydb.RateLimiter.ListResourcesRespon
  * Use `create(ListResourcesResponseSchema)` to create a new message.
  */
 export const ListResourcesResponseSchema: GenMessage<ListResourcesResponse> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 12);
+  messageDesc(file_protos_ydb_rate_limiter, 14);
 
 /**
  * @generated from message Ydb.RateLimiter.ListResourcesResult
@@ -369,7 +557,7 @@ export type ListResourcesResult = Message<"Ydb.RateLimiter.ListResourcesResult">
  * Use `create(ListResourcesResultSchema)` to create a new message.
  */
 export const ListResourcesResultSchema: GenMessage<ListResourcesResult> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 13);
+  messageDesc(file_protos_ydb_rate_limiter, 15);
 
 /**
  * @generated from message Ydb.RateLimiter.DescribeResourceRequest
@@ -400,7 +588,7 @@ export type DescribeResourceRequest = Message<"Ydb.RateLimiter.DescribeResourceR
  * Use `create(DescribeResourceRequestSchema)` to create a new message.
  */
 export const DescribeResourceRequestSchema: GenMessage<DescribeResourceRequest> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 14);
+  messageDesc(file_protos_ydb_rate_limiter, 16);
 
 /**
  * @generated from message Ydb.RateLimiter.DescribeResourceResponse
@@ -419,7 +607,7 @@ export type DescribeResourceResponse = Message<"Ydb.RateLimiter.DescribeResource
  * Use `create(DescribeResourceResponseSchema)` to create a new message.
  */
 export const DescribeResourceResponseSchema: GenMessage<DescribeResourceResponse> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 15);
+  messageDesc(file_protos_ydb_rate_limiter, 17);
 
 /**
  * @generated from message Ydb.RateLimiter.DescribeResourceResult
@@ -436,7 +624,7 @@ export type DescribeResourceResult = Message<"Ydb.RateLimiter.DescribeResourceRe
  * Use `create(DescribeResourceResultSchema)` to create a new message.
  */
 export const DescribeResourceResultSchema: GenMessage<DescribeResourceResult> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 16);
+  messageDesc(file_protos_ydb_rate_limiter, 18);
 
 /**
  * @generated from message Ydb.RateLimiter.AcquireResourceRequest
@@ -488,7 +676,7 @@ export type AcquireResourceRequest = Message<"Ydb.RateLimiter.AcquireResourceReq
  * Use `create(AcquireResourceRequestSchema)` to create a new message.
  */
 export const AcquireResourceRequestSchema: GenMessage<AcquireResourceRequest> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 17);
+  messageDesc(file_protos_ydb_rate_limiter, 19);
 
 /**
  * @generated from message Ydb.RateLimiter.AcquireResourceResponse
@@ -507,7 +695,7 @@ export type AcquireResourceResponse = Message<"Ydb.RateLimiter.AcquireResourceRe
  * Use `create(AcquireResourceResponseSchema)` to create a new message.
  */
 export const AcquireResourceResponseSchema: GenMessage<AcquireResourceResponse> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 18);
+  messageDesc(file_protos_ydb_rate_limiter, 20);
 
 /**
  * @generated from message Ydb.RateLimiter.AcquireResourceResult
@@ -520,5 +708,5 @@ export type AcquireResourceResult = Message<"Ydb.RateLimiter.AcquireResourceResu
  * Use `create(AcquireResourceResultSchema)` to create a new message.
  */
 export const AcquireResourceResultSchema: GenMessage<AcquireResourceResult> = /*@__PURE__*/
-  messageDesc(file_protos_ydb_rate_limiter, 19);
+  messageDesc(file_protos_ydb_rate_limiter, 21);
 

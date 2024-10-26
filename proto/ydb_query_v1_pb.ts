@@ -20,7 +20,7 @@ export const file_ydb_query_v1: GenFile = /*@__PURE__*/
  */
 export const QueryService: GenService<{
   /**
-   * Sessions are basic primitives for communicating with YDB Query Service. The are similar to
+   * Sessions are basic primitives for communicating with YDB Query Service. They are similar to
    * connections for classic relational DBs. Sessions serve three main purposes:
    * 1. Provide a flow control for DB requests with limited number of active channels.
    * 2. Distribute load evenly across multiple DB nodes.

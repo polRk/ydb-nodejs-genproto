@@ -12,7 +12,7 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file protos/ydb_discovery.proto.
  */
 export const file_protos_ydb_discovery: GenFile = /*@__PURE__*/
-  fileDesc("Chpwcm90b3MveWRiX2Rpc2NvdmVyeS5wcm90bxINWWRiLkRpc2NvdmVyeSI5ChRMaXN0RW5kcG9pbnRzUmVxdWVzdBIQCghkYXRhYmFzZRgBIAEoCRIPCgdzZXJ2aWNlGAIgAygJIsMBCgxFbmRwb2ludEluZm8SDwoHYWRkcmVzcxgBIAEoCRIMCgRwb3J0GAIgASgNEhMKC2xvYWRfZmFjdG9yGAMgASgCEgsKA3NzbBgEIAEoCBIPCgdzZXJ2aWNlGAUgAygJEhAKCGxvY2F0aW9uGAYgASgJEg8KB25vZGVfaWQYByABKA0SDQoFaXBfdjQYCCADKAkSDQoFaXBfdjYYCSADKAkSIAoYc3NsX3RhcmdldF9uYW1lX292ZXJyaWRlGAogASgJIlwKE0xpc3RFbmRwb2ludHNSZXN1bHQSLgoJZW5kcG9pbnRzGAEgAygLMhsuWWRiLkRpc2NvdmVyeS5FbmRwb2ludEluZm8SFQoNc2VsZl9sb2NhdGlvbhgCIAEoCSJFChVMaXN0RW5kcG9pbnRzUmVzcG9uc2USLAoJb3BlcmF0aW9uGAEgASgLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uIicKDVdob0FtSVJlcXVlc3QSFgoOaW5jbHVkZV9ncm91cHMYASABKAgiLAoMV2hvQW1JUmVzdWx0EgwKBHVzZXIYASABKAkSDgoGZ3JvdXBzGAIgAygJIj4KDldob0FtSVJlc3BvbnNlEiwKCW9wZXJhdGlvbhgBIAEoCzIZLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvbiLgAgoMTm9kZUxvY2F0aW9uEiAKD2RhdGFfY2VudGVyX251bRgBIAEoDUICGAFIAIgBARIZCghyb29tX251bRgCIAEoDUICGAFIAYgBARIZCghyYWNrX251bRgDIAEoDUICGAFIAogBARIZCghib2R5X251bRgEIAEoDUICGAFIA4gBARIXCgRib2R5GJSRBiABKA1CAhgBSASIAQESGAoLZGF0YV9jZW50ZXIYCiABKAlIBYgBARITCgZtb2R1bGUYFCABKAlIBogBARIRCgRyYWNrGB4gASgJSAeIAQESEQoEdW5pdBgoIAEoCUgIiAEBQhIKEF9kYXRhX2NlbnRlcl9udW1CCwoJX3Jvb21fbnVtQgsKCV9yYWNrX251bUILCglfYm9keV9udW1CBwoFX2JvZHlCDgoMX2RhdGFfY2VudGVyQgkKB19tb2R1bGVCBwoFX3JhY2tCBwoFX3VuaXRCbAoYdGVjaC55ZGIucHJvdG8uZGlzY292ZXJ5Qg9EaXNjb3ZlcnlQcm90b3NaPGdpdGh1Yi5jb20veWRiLXBsYXRmb3JtL3lkYi1nby1nZW5wcm90by9wcm90b3MvWWRiX0Rpc2NvdmVyefgBAWIGcHJvdG8z", [file_protos_ydb_operation]);
+  fileDesc("Chpwcm90b3MveWRiX2Rpc2NvdmVyeS5wcm90bxINWWRiLkRpc2NvdmVyeSI5ChRMaXN0RW5kcG9pbnRzUmVxdWVzdBIQCghkYXRhYmFzZRgBIAEoCRIPCgdzZXJ2aWNlGAIgAygJIsMBCgxFbmRwb2ludEluZm8SDwoHYWRkcmVzcxgBIAEoCRIMCgRwb3J0GAIgASgNEhMKC2xvYWRfZmFjdG9yGAMgASgCEgsKA3NzbBgEIAEoCBIPCgdzZXJ2aWNlGAUgAygJEhAKCGxvY2F0aW9uGAYgASgJEg8KB25vZGVfaWQYByABKA0SDQoFaXBfdjQYCCADKAkSDQoFaXBfdjYYCSADKAkSIAoYc3NsX3RhcmdldF9uYW1lX292ZXJyaWRlGAogASgJIlwKE0xpc3RFbmRwb2ludHNSZXN1bHQSLgoJZW5kcG9pbnRzGAEgAygLMhsuWWRiLkRpc2NvdmVyeS5FbmRwb2ludEluZm8SFQoNc2VsZl9sb2NhdGlvbhgCIAEoCSJFChVMaXN0RW5kcG9pbnRzUmVzcG9uc2USLAoJb3BlcmF0aW9uGAEgASgLMhkuWWRiLk9wZXJhdGlvbnMuT3BlcmF0aW9uIicKDVdob0FtSVJlcXVlc3QSFgoOaW5jbHVkZV9ncm91cHMYASABKAgiLAoMV2hvQW1JUmVzdWx0EgwKBHVzZXIYASABKAkSDgoGZ3JvdXBzGAIgAygJIj4KDldob0FtSVJlc3BvbnNlEiwKCW9wZXJhdGlvbhgBIAEoCzIZLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvbiLgAgoMTm9kZUxvY2F0aW9uEiAKD2RhdGFfY2VudGVyX251bRgBIAEoDUICGAFIAIgBARIZCghyb29tX251bRgCIAEoDUICGAFIAYgBARIZCghyYWNrX251bRgDIAEoDUICGAFIAogBARIZCghib2R5X251bRgEIAEoDUICGAFIA4gBARIXCgRib2R5GJSRBiABKA1CAhgBSASIAQESGAoLZGF0YV9jZW50ZXIYCiABKAlIBYgBARITCgZtb2R1bGUYFCABKAlIBogBARIRCgRyYWNrGB4gASgJSAeIAQESEQoEdW5pdBgoIAEoCUgIiAEBQhIKEF9kYXRhX2NlbnRlcl9udW1CCwoJX3Jvb21fbnVtQgsKCV9yYWNrX251bUILCglfYm9keV9udW1CBwoFX2JvZHlCDgoMX2RhdGFfY2VudGVyQgkKB19tb2R1bGVCBwoFX3JhY2tCBwoFX3VuaXQikwIKCE5vZGVJbmZvEhQKB25vZGVfaWQYASABKA1IAIgBARIRCgRob3N0GAIgASgJSAGIAQESEQoEcG9ydBgDIAEoDUgCiAEBEhkKDHJlc29sdmVfaG9zdBgEIAEoCUgDiAEBEhQKB2FkZHJlc3MYBSABKAlIBIgBARIyCghsb2NhdGlvbhgGIAEoCzIbLllkYi5EaXNjb3ZlcnkuTm9kZUxvY2F0aW9uSAWIAQESEwoGZXhwaXJlGAcgASgESAaIAQFCCgoIX25vZGVfaWRCBwoFX2hvc3RCBwoFX3BvcnRCDwoNX3Jlc29sdmVfaG9zdEIKCghfYWRkcmVzc0ILCglfbG9jYXRpb25CCQoHX2V4cGlyZSLUAgoXTm9kZVJlZ2lzdHJhdGlvblJlcXVlc3QSEQoEaG9zdBgBIAEoCUgAiAEBEhEKBHBvcnQYAiABKA1IAYgBARIZCgxyZXNvbHZlX2hvc3QYAyABKAlIAogBARIUCgdhZGRyZXNzGAQgASgJSAOIAQESMgoIbG9jYXRpb24YBSABKAsyGy5ZZGIuRGlzY292ZXJ5Lk5vZGVMb2NhdGlvbkgEiAEBEhgKC2RvbWFpbl9wYXRoGAYgASgJSAWIAQESGgoNZml4ZWRfbm9kZV9pZBgHIAEoCEgGiAEBEhEKBHBhdGgYCCABKAlIB4gBAUIHCgVfaG9zdEIHCgVfcG9ydEIPCg1fcmVzb2x2ZV9ob3N0QgoKCF9hZGRyZXNzQgsKCV9sb2NhdGlvbkIOCgxfZG9tYWluX3BhdGhCEAoOX2ZpeGVkX25vZGVfaWRCBwoFX3BhdGgisgIKFk5vZGVSZWdpc3RyYXRpb25SZXN1bHQSFAoHbm9kZV9pZBgBIAEoDUgAiAEBEhgKC2RvbWFpbl9wYXRoGAIgASgJSAGIAQESEwoGZXhwaXJlGAMgASgESAKIAQESJgoFbm9kZXMYBCADKAsyFy5ZZGIuRGlzY292ZXJ5Lk5vZGVJbmZvEhwKD3Njb3BlX3RhYmxldF9pZBgFIAEoBEgDiAEBEhoKDXNjb3BlX3BhdGhfaWQYBiABKARIBIgBARIWCglub2RlX25hbWUYByABKAlIBYgBAUIKCghfbm9kZV9pZEIOCgxfZG9tYWluX3BhdGhCCQoHX2V4cGlyZUISChBfc2NvcGVfdGFibGV0X2lkQhAKDl9zY29wZV9wYXRoX2lkQgwKCl9ub2RlX25hbWUiSAoYTm9kZVJlZ2lzdHJhdGlvblJlc3BvbnNlEiwKCW9wZXJhdGlvbhgBIAEoCzIZLllkYi5PcGVyYXRpb25zLk9wZXJhdGlvbkJsChh0ZWNoLnlkYi5wcm90by5kaXNjb3ZlcnlCD0Rpc2NvdmVyeVByb3Rvc1o8Z2l0aHViLmNvbS95ZGItcGxhdGZvcm0veWRiLWdvLWdlbnByb3RvL3Byb3Rvcy9ZZGJfRGlzY292ZXJ5+AEBYgZwcm90bzM", [file_protos_ydb_operation]);
 
 /**
  * @generated from message Ydb.Discovery.ListEndpointsRequest
@@ -274,4 +274,169 @@ export type NodeLocation = Message<"Ydb.Discovery.NodeLocation"> & {
  */
 export const NodeLocationSchema: GenMessage<NodeLocation> = /*@__PURE__*/
   messageDesc(file_protos_ydb_discovery, 7);
+
+/**
+ * @generated from message Ydb.Discovery.NodeInfo
+ */
+export type NodeInfo = Message<"Ydb.Discovery.NodeInfo"> & {
+  /**
+   * @generated from field: optional uint32 node_id = 1;
+   */
+  nodeId?: number;
+
+  /**
+   * @generated from field: optional string host = 2;
+   */
+  host?: string;
+
+  /**
+   * @generated from field: optional uint32 port = 3;
+   */
+  port?: number;
+
+  /**
+   * @generated from field: optional string resolve_host = 4;
+   */
+  resolveHost?: string;
+
+  /**
+   * @generated from field: optional string address = 5;
+   */
+  address?: string;
+
+  /**
+   * @generated from field: optional Ydb.Discovery.NodeLocation location = 6;
+   */
+  location?: NodeLocation;
+
+  /**
+   * @generated from field: optional uint64 expire = 7;
+   */
+  expire?: bigint;
+};
+
+/**
+ * Describes the message Ydb.Discovery.NodeInfo.
+ * Use `create(NodeInfoSchema)` to create a new message.
+ */
+export const NodeInfoSchema: GenMessage<NodeInfo> = /*@__PURE__*/
+  messageDesc(file_protos_ydb_discovery, 8);
+
+/**
+ * @generated from message Ydb.Discovery.NodeRegistrationRequest
+ */
+export type NodeRegistrationRequest = Message<"Ydb.Discovery.NodeRegistrationRequest"> & {
+  /**
+   * @generated from field: optional string host = 1;
+   */
+  host?: string;
+
+  /**
+   * @generated from field: optional uint32 port = 2;
+   */
+  port?: number;
+
+  /**
+   * @generated from field: optional string resolve_host = 3;
+   */
+  resolveHost?: string;
+
+  /**
+   * @generated from field: optional string address = 4;
+   */
+  address?: string;
+
+  /**
+   * @generated from field: optional Ydb.Discovery.NodeLocation location = 5;
+   */
+  location?: NodeLocation;
+
+  /**
+   * @generated from field: optional string domain_path = 6;
+   */
+  domainPath?: string;
+
+  /**
+   * @generated from field: optional bool fixed_node_id = 7;
+   */
+  fixedNodeId?: boolean;
+
+  /**
+   * @generated from field: optional string path = 8;
+   */
+  path?: string;
+};
+
+/**
+ * Describes the message Ydb.Discovery.NodeRegistrationRequest.
+ * Use `create(NodeRegistrationRequestSchema)` to create a new message.
+ */
+export const NodeRegistrationRequestSchema: GenMessage<NodeRegistrationRequest> = /*@__PURE__*/
+  messageDesc(file_protos_ydb_discovery, 9);
+
+/**
+ * @generated from message Ydb.Discovery.NodeRegistrationResult
+ */
+export type NodeRegistrationResult = Message<"Ydb.Discovery.NodeRegistrationResult"> & {
+  /**
+   * @generated from field: optional uint32 node_id = 1;
+   */
+  nodeId?: number;
+
+  /**
+   * @generated from field: optional string domain_path = 2;
+   */
+  domainPath?: string;
+
+  /**
+   * @generated from field: optional uint64 expire = 3;
+   */
+  expire?: bigint;
+
+  /**
+   * @generated from field: repeated Ydb.Discovery.NodeInfo nodes = 4;
+   */
+  nodes: NodeInfo[];
+
+  /**
+   * @generated from field: optional uint64 scope_tablet_id = 5;
+   */
+  scopeTabletId?: bigint;
+
+  /**
+   * @generated from field: optional uint64 scope_path_id = 6;
+   */
+  scopePathId?: bigint;
+
+  /**
+   * A unique name within the tenant generated by the system
+   *
+   * @generated from field: optional string node_name = 7;
+   */
+  nodeName?: string;
+};
+
+/**
+ * Describes the message Ydb.Discovery.NodeRegistrationResult.
+ * Use `create(NodeRegistrationResultSchema)` to create a new message.
+ */
+export const NodeRegistrationResultSchema: GenMessage<NodeRegistrationResult> = /*@__PURE__*/
+  messageDesc(file_protos_ydb_discovery, 10);
+
+/**
+ * @generated from message Ydb.Discovery.NodeRegistrationResponse
+ */
+export type NodeRegistrationResponse = Message<"Ydb.Discovery.NodeRegistrationResponse"> & {
+  /**
+   * @generated from field: Ydb.Operations.Operation operation = 1;
+   */
+  operation?: Operation;
+};
+
+/**
+ * Describes the message Ydb.Discovery.NodeRegistrationResponse.
+ * Use `create(NodeRegistrationResponseSchema)` to create a new message.
+ */
+export const NodeRegistrationResponseSchema: GenMessage<NodeRegistrationResponse> = /*@__PURE__*/
+  messageDesc(file_protos_ydb_discovery, 11);
 

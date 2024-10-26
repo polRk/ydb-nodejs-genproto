@@ -4,14 +4,14 @@
 
 import type { GenFile, GenService } from "@bufbuild/protobuf/codegenv1";
 import { fileDesc, serviceDesc } from "@bufbuild/protobuf/codegenv1";
-import type { ListEndpointsRequestSchema, ListEndpointsResponseSchema, WhoAmIRequestSchema, WhoAmIResponseSchema } from "./protos/ydb_discovery_pb";
+import type { ListEndpointsRequestSchema, ListEndpointsResponseSchema, NodeRegistrationRequestSchema, NodeRegistrationResponseSchema, WhoAmIRequestSchema, WhoAmIResponseSchema } from "./protos/ydb_discovery_pb";
 import { file_protos_ydb_discovery } from "./protos/ydb_discovery_pb";
 
 /**
  * Describes the file ydb_discovery_v1.proto.
  */
 export const file_ydb_discovery_v1: GenFile = /*@__PURE__*/
-  fileDesc("ChZ5ZGJfZGlzY292ZXJ5X3YxLnByb3RvEhBZZGIuRGlzY292ZXJ5LlYxMrUBChBEaXNjb3ZlcnlTZXJ2aWNlEloKDUxpc3RFbmRwb2ludHMSIy5ZZGIuRGlzY292ZXJ5Lkxpc3RFbmRwb2ludHNSZXF1ZXN0GiQuWWRiLkRpc2NvdmVyeS5MaXN0RW5kcG9pbnRzUmVzcG9uc2USRQoGV2hvQW1JEhwuWWRiLkRpc2NvdmVyeS5XaG9BbUlSZXF1ZXN0Gh0uWWRiLkRpc2NvdmVyeS5XaG9BbUlSZXNwb25zZUJXCht0ZWNoLnlkYi5wcm90by5kaXNjb3ZlcnkudjFaOGdpdGh1Yi5jb20veWRiLXBsYXRmb3JtL3lkYi1nby1nZW5wcm90by9ZZGJfRGlzY292ZXJ5X1YxYgZwcm90bzM", [file_protos_ydb_discovery]);
+  fileDesc("ChZ5ZGJfZGlzY292ZXJ5X3YxLnByb3RvEhBZZGIuRGlzY292ZXJ5LlYxMpoCChBEaXNjb3ZlcnlTZXJ2aWNlEloKDUxpc3RFbmRwb2ludHMSIy5ZZGIuRGlzY292ZXJ5Lkxpc3RFbmRwb2ludHNSZXF1ZXN0GiQuWWRiLkRpc2NvdmVyeS5MaXN0RW5kcG9pbnRzUmVzcG9uc2USRQoGV2hvQW1JEhwuWWRiLkRpc2NvdmVyeS5XaG9BbUlSZXF1ZXN0Gh0uWWRiLkRpc2NvdmVyeS5XaG9BbUlSZXNwb25zZRJjChBOb2RlUmVnaXN0cmF0aW9uEiYuWWRiLkRpc2NvdmVyeS5Ob2RlUmVnaXN0cmF0aW9uUmVxdWVzdBonLllkYi5EaXNjb3ZlcnkuTm9kZVJlZ2lzdHJhdGlvblJlc3BvbnNlQlcKG3RlY2gueWRiLnByb3RvLmRpc2NvdmVyeS52MVo4Z2l0aHViLmNvbS95ZGItcGxhdGZvcm0veWRiLWdvLWdlbnByb3RvL1lkYl9EaXNjb3ZlcnlfVjFiBnByb3RvMw", [file_protos_ydb_discovery]);
 
 /**
  * @generated from service Ydb.Discovery.V1.DiscoveryService
@@ -32,6 +32,14 @@ export const DiscoveryService: GenService<{
     methodKind: "unary";
     input: typeof WhoAmIRequestSchema;
     output: typeof WhoAmIResponseSchema;
+  },
+  /**
+   * @generated from rpc Ydb.Discovery.V1.DiscoveryService.NodeRegistration
+   */
+  nodeRegistration: {
+    methodKind: "unary";
+    input: typeof NodeRegistrationRequestSchema;
+    output: typeof NodeRegistrationResponseSchema;
   },
 }> = /*@__PURE__*/
   serviceDesc(file_ydb_discovery_v1, 0);

@@ -4,14 +4,14 @@
 
 import type { GenFile, GenService } from "@bufbuild/protobuf/codegenv1";
 import { fileDesc, serviceDesc } from "@bufbuild/protobuf/codegenv1";
-import type { AlterTopicRequestSchema, AlterTopicResponseSchema, CommitOffsetRequestSchema, CommitOffsetResponseSchema, CreateTopicRequestSchema, CreateTopicResponseSchema, DescribeConsumerRequestSchema, DescribeConsumerResponseSchema, DescribeTopicRequestSchema, DescribeTopicResponseSchema, DropTopicRequestSchema, DropTopicResponseSchema, StreamReadMessage_FromClientSchema, StreamReadMessage_FromServerSchema, StreamWriteMessage_FromClientSchema, StreamWriteMessage_FromServerSchema, UpdateOffsetsInTransactionRequestSchema, UpdateOffsetsInTransactionResponseSchema } from "./protos/ydb_topic_pb";
+import type { AlterTopicRequestSchema, AlterTopicResponseSchema, CommitOffsetRequestSchema, CommitOffsetResponseSchema, CreateTopicRequestSchema, CreateTopicResponseSchema, DescribeConsumerRequestSchema, DescribeConsumerResponseSchema, DescribePartitionRequestSchema, DescribePartitionResponseSchema, DescribeTopicRequestSchema, DescribeTopicResponseSchema, DropTopicRequestSchema, DropTopicResponseSchema, StreamDirectReadMessage_FromClientSchema, StreamDirectReadMessage_FromServerSchema, StreamReadMessage_FromClientSchema, StreamReadMessage_FromServerSchema, StreamWriteMessage_FromClientSchema, StreamWriteMessage_FromServerSchema, UpdateOffsetsInTransactionRequestSchema, UpdateOffsetsInTransactionResponseSchema } from "./protos/ydb_topic_pb";
 import { file_protos_ydb_topic } from "./protos/ydb_topic_pb";
 
 /**
  * Describes the file ydb_topic_v1.proto.
  */
 export const file_ydb_topic_v1: GenFile = /*@__PURE__*/
-  fileDesc("ChJ5ZGJfdG9waWNfdjEucHJvdG8SDFlkYi5Ub3BpYy5WMTK3BgoMVG9waWNTZXJ2aWNlEmUKC1N0cmVhbVdyaXRlEiguWWRiLlRvcGljLlN0cmVhbVdyaXRlTWVzc2FnZS5Gcm9tQ2xpZW50GiguWWRiLlRvcGljLlN0cmVhbVdyaXRlTWVzc2FnZS5Gcm9tU2VydmVyKAEwARJiCgpTdHJlYW1SZWFkEicuWWRiLlRvcGljLlN0cmVhbVJlYWRNZXNzYWdlLkZyb21DbGllbnQaJy5ZZGIuVG9waWMuU3RyZWFtUmVhZE1lc3NhZ2UuRnJvbVNlcnZlcigBMAESTwoMQ29tbWl0T2Zmc2V0Eh4uWWRiLlRvcGljLkNvbW1pdE9mZnNldFJlcXVlc3QaHy5ZZGIuVG9waWMuQ29tbWl0T2Zmc2V0UmVzcG9uc2USeQoaVXBkYXRlT2Zmc2V0c0luVHJhbnNhY3Rpb24SLC5ZZGIuVG9waWMuVXBkYXRlT2Zmc2V0c0luVHJhbnNhY3Rpb25SZXF1ZXN0Gi0uWWRiLlRvcGljLlVwZGF0ZU9mZnNldHNJblRyYW5zYWN0aW9uUmVzcG9uc2USTAoLQ3JlYXRlVG9waWMSHS5ZZGIuVG9waWMuQ3JlYXRlVG9waWNSZXF1ZXN0Gh4uWWRiLlRvcGljLkNyZWF0ZVRvcGljUmVzcG9uc2USUgoNRGVzY3JpYmVUb3BpYxIfLllkYi5Ub3BpYy5EZXNjcmliZVRvcGljUmVxdWVzdBogLllkYi5Ub3BpYy5EZXNjcmliZVRvcGljUmVzcG9uc2USWwoQRGVzY3JpYmVDb25zdW1lchIiLllkYi5Ub3BpYy5EZXNjcmliZUNvbnN1bWVyUmVxdWVzdBojLllkYi5Ub3BpYy5EZXNjcmliZUNvbnN1bWVyUmVzcG9uc2USSQoKQWx0ZXJUb3BpYxIcLllkYi5Ub3BpYy5BbHRlclRvcGljUmVxdWVzdBodLllkYi5Ub3BpYy5BbHRlclRvcGljUmVzcG9uc2USRgoJRHJvcFRvcGljEhsuWWRiLlRvcGljLkRyb3BUb3BpY1JlcXVlc3QaHC5ZZGIuVG9waWMuRHJvcFRvcGljUmVzcG9uc2VCUgoXdGVjaC55ZGIucHJvdG8udG9waWMudjFaNGdpdGh1Yi5jb20veWRiLXBsYXRmb3JtL3lkYi1nby1nZW5wcm90by9ZZGJfVG9waWNfVjH4AQFiBnByb3RvMw", [file_protos_ydb_topic]);
+  fileDesc("ChJ5ZGJfdG9waWNfdjEucHJvdG8SDFlkYi5Ub3BpYy5WMTKNCAoMVG9waWNTZXJ2aWNlEmUKC1N0cmVhbVdyaXRlEiguWWRiLlRvcGljLlN0cmVhbVdyaXRlTWVzc2FnZS5Gcm9tQ2xpZW50GiguWWRiLlRvcGljLlN0cmVhbVdyaXRlTWVzc2FnZS5Gcm9tU2VydmVyKAEwARJiCgpTdHJlYW1SZWFkEicuWWRiLlRvcGljLlN0cmVhbVJlYWRNZXNzYWdlLkZyb21DbGllbnQaJy5ZZGIuVG9waWMuU3RyZWFtUmVhZE1lc3NhZ2UuRnJvbVNlcnZlcigBMAESdAoQU3RyZWFtRGlyZWN0UmVhZBItLllkYi5Ub3BpYy5TdHJlYW1EaXJlY3RSZWFkTWVzc2FnZS5Gcm9tQ2xpZW50Gi0uWWRiLlRvcGljLlN0cmVhbURpcmVjdFJlYWRNZXNzYWdlLkZyb21TZXJ2ZXIoATABEk8KDENvbW1pdE9mZnNldBIeLllkYi5Ub3BpYy5Db21taXRPZmZzZXRSZXF1ZXN0Gh8uWWRiLlRvcGljLkNvbW1pdE9mZnNldFJlc3BvbnNlEnkKGlVwZGF0ZU9mZnNldHNJblRyYW5zYWN0aW9uEiwuWWRiLlRvcGljLlVwZGF0ZU9mZnNldHNJblRyYW5zYWN0aW9uUmVxdWVzdBotLllkYi5Ub3BpYy5VcGRhdGVPZmZzZXRzSW5UcmFuc2FjdGlvblJlc3BvbnNlEkwKC0NyZWF0ZVRvcGljEh0uWWRiLlRvcGljLkNyZWF0ZVRvcGljUmVxdWVzdBoeLllkYi5Ub3BpYy5DcmVhdGVUb3BpY1Jlc3BvbnNlElIKDURlc2NyaWJlVG9waWMSHy5ZZGIuVG9waWMuRGVzY3JpYmVUb3BpY1JlcXVlc3QaIC5ZZGIuVG9waWMuRGVzY3JpYmVUb3BpY1Jlc3BvbnNlEl4KEURlc2NyaWJlUGFydGl0aW9uEiMuWWRiLlRvcGljLkRlc2NyaWJlUGFydGl0aW9uUmVxdWVzdBokLllkYi5Ub3BpYy5EZXNjcmliZVBhcnRpdGlvblJlc3BvbnNlElsKEERlc2NyaWJlQ29uc3VtZXISIi5ZZGIuVG9waWMuRGVzY3JpYmVDb25zdW1lclJlcXVlc3QaIy5ZZGIuVG9waWMuRGVzY3JpYmVDb25zdW1lclJlc3BvbnNlEkkKCkFsdGVyVG9waWMSHC5ZZGIuVG9waWMuQWx0ZXJUb3BpY1JlcXVlc3QaHS5ZZGIuVG9waWMuQWx0ZXJUb3BpY1Jlc3BvbnNlEkYKCURyb3BUb3BpYxIbLllkYi5Ub3BpYy5Ecm9wVG9waWNSZXF1ZXN0GhwuWWRiLlRvcGljLkRyb3BUb3BpY1Jlc3BvbnNlQlIKF3RlY2gueWRiLnByb3RvLnRvcGljLnYxWjRnaXRodWIuY29tL3lkYi1wbGF0Zm9ybS95ZGItZ28tZ2VucHJvdG8vWWRiX1RvcGljX1Yx+AEBYgZwcm90bzM", [file_protos_ydb_topic]);
 
 /**
  * @generated from service Ydb.Topic.V1.TopicService
@@ -69,9 +69,9 @@ export const TopicService: GenService<{
    *         StopPartitionSessionResponse(PartitionSessionID1, ...)
    *             only after this response server will give this parittion to other session.
    *        ---------------->
-   *         StartPartitionSessionResponse(PartitionSession2, ...)
+   *         StartPartitionSessionResponse(PartitionSessionID2, ...)
    *        ---------------->
-   *         ReadResponse(data, ...)
+   *         ReadResponse(MessageData, ...)
    *        <----------------
    *         CommitRequest(PartitionCommit1, ...)
    *        ---------------->
@@ -80,12 +80,66 @@ export const TopicService: GenService<{
    *         [something went wrong] (status != SUCCESS, issues not empty)
    *        <----------------
    *
+   * Pipeline for direct reading is similar, but the client receives data directly from the partition node
+   * The following is an excerpt from the pipeline for direct reading:
+   * client                  server
+   *         InitRequest(Topics, ClientID, ..., direct_read = true)
+   *        ---------------->
+   *         InitResponse(SessionID1)
+   *        <----------------
+   *         ReadRequest
+   *        ---------------->
+   *         StartPartitionSessionRequest(Topic1, Partition1, PartitionSessionID1, PartitionLocation1, Secret1,...)
+   *        <----------------
+   *         StartPartitionSessionResponse(PartitionSessionID1, ...)
+   *        ---------------->
+   *
+   *          Start data session to the partition node using StreamDirectRead.StartDirectReadSession
+   *
+   *          Get data from the partition node using StreamDirectRead.DirectReadResponse
+   *
+   *         DirectReadAck(PartitionSessionID1, DirectReadID1, ...)
+   *        ---------------->
+   *         ReadRequest
+   *        ---------------->
+   *
+   *         Get data the partition node using StreamDirectRead.DirectReadResponse
+   *
+   *         DirectReadAckRequest(PartitionSessionID1,DirectReadID2, ...)
+   *        ---------------->
+   *
    * @generated from rpc Ydb.Topic.V1.TopicService.StreamRead
    */
   streamRead: {
     methodKind: "bidi_streaming";
     input: typeof StreamReadMessage_FromClientSchema;
     output: typeof StreamReadMessage_FromServerSchema;
+  },
+  /**
+   * Create DirectRead Session
+   * Pipeline:
+   * client                  server
+   *         InitRequest(SessionID1, TopicReadSettings, Consumer)
+   *        ---------------->
+   *         InitResponse
+   *        <----------------
+   *         StartDirectReadPartitionSessionRequest(PartitionSessionID1, LastDirectReadID, TabletGeneration1)
+   *        ---------------->
+   *         StartDirectReadPartitionSessionResponse(PartitionSessionID1, TabletGeneration1)
+   *        <----------------
+   *         DirectReadResponse(PartitionSessionID1, DirectReadID1, Secret1, ...)
+   *        <----------------
+   *         DirectReadResponse(PartitionSessionID1, DirectReadID2, Secret1, ...)
+   *        <----------------
+   *         StopDirectReadPartitionSession(status, issues, PartitionSessionID1, TabletGeneration1)
+   *        <----------------
+   *
+   * @generated from rpc Ydb.Topic.V1.TopicService.StreamDirectRead
+   */
+  streamDirectRead: {
+    methodKind: "bidi_streaming";
+    input: typeof StreamDirectReadMessage_FromClientSchema;
+    output: typeof StreamDirectReadMessage_FromServerSchema;
   },
   /**
    * Single commit offset request.
@@ -126,6 +180,16 @@ export const TopicService: GenService<{
     methodKind: "unary";
     input: typeof DescribeTopicRequestSchema;
     output: typeof DescribeTopicResponseSchema;
+  },
+  /**
+   * Describe partition command.
+   *
+   * @generated from rpc Ydb.Topic.V1.TopicService.DescribePartition
+   */
+  describePartition: {
+    methodKind: "unary";
+    input: typeof DescribePartitionRequestSchema;
+    output: typeof DescribePartitionResponseSchema;
   },
   /**
    * Describe topic's consumer command.

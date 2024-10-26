@@ -2,14 +2,13 @@
   "name": "ydb-sdk-proto",
   "version": "2.0.0",
   "description": "Node.js YDB SDK compiled protobufs",
-  "main": "proto/bundle.js",
+  "type": "module",
   "files": [
     "proto/**"
   ],
   "scripts": {
     "start": "node --import=tsx index.ts",
-    "gen": "buf generate --include-imports --include-wkt",
-    "ydb": "docker run -d --rm --name ydb-local -h localhost --platform linux/amd64 -p 2135:2135 -p 2136:2136 -p 8765:8765 -v $(pwd)/.ydb/ydb_certs:/ydb_certs -v $(pwd)/.ydb/ydb_data:/ydb_data -e GRPC_TLS_PORT=2135 -e GRPC_PORT=2136 -e MON_PORT=8765 -e YDB_USE_IN_MEMORY_PDISKS=true cr.yandex/yc/yandex-docker-local-ydb:latest"
+    "gen": "buf generate --include-imports --include-wkt"
   },
   "keywords": [
     "ydb",
@@ -25,7 +24,7 @@
     "@bufbuild/protobuf": "^2.2.0",
     "@connectrpc/connect": "^2.0.0-beta.2",
     "@connectrpc/connect-node": "^2.0.0-beta.2",
-    "@grpc/grpc-js": "^1.12.2"
+    "tinybench": "^2.9.0"
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.45.0",

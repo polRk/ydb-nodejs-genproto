@@ -9,7 +9,7 @@ clean: true
 inputs:
   # Git repository
   - git_repo: https://github.com/ydb-platform/ydb-api-protos.git
-    branch: master
+    branch: sync
 plugins:
   # This will invoke protoc-gen-es
   - local: protoc-gen-es
